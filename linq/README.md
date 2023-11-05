@@ -24,3 +24,9 @@ var myLinqQuery = from name in names
 foreach(var name in myLinqQuery)
     Console.Write(name + " ");
 ```
+You will not get the result of a LINQ query until you execute it.
+LINQ query can be executed in multiple ways, here we used foreach loop to execute our query stored in myLinqQuery.
+The foreach loop executes the query on the data source, gets the result, and then iterates over the result set.
+
+For more information about the syntax of LINQ, visit this website: https://www.tutorialsteacher.com/linq
+
