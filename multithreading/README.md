@@ -43,7 +43,6 @@ Here’s an example that demonstrates a multi-threaded program where each thread
 ```csharp
 using System;
 using System.Threading;
-using System.Collections.Generic;
 
 class Program
 {
@@ -61,7 +60,7 @@ class Program
             thread.Start();
         }
 
-        foreach (var thread in threads)
+        foreach (Thread thread in threads)
         {
             thread.Join();
         }
