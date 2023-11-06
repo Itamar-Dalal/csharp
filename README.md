@@ -5,7 +5,7 @@ Repo made for explaining advanced topics in C#:
 <a href="https://github.com/Itamar-Dalal/csharp/tree/main/dependency-injection">Dependency Injection</a><br/>
 <a href="https://github.com/Itamar-Dalal/csharp/tree/main/linq">LINQ</a><br/>
 <a href="https://github.com/Itamar-Dalal/csharp/tree/main/generics">Generics</a><br/>
-<a href="">Generics</a><br/>
+<a href="https://github.com/Itamar-Dalal/csharp/tree/main/multithreading">Multi-Threading</a><br/>
 <a href="">Generics</a><br/>
 <a href="">Generics</a><br/>
 <a href="">Generics</a><br/>
