@@ -40,11 +40,11 @@ Here are some common C# threading commands and their explanations:
     - You can use the `lock` statement to protect shared resources and prevent race conditions in multi-threaded programs. It ensures that only one thread can execute a critical section of code at a time.
 
 Here’s an example that demonstrates a multi-threaded program where each thread performs a specific task:
+```csharp
 using System;
 using System.Threading;
 using System.Collections.Generic;
 
-```csharp
 class Program
 {
     private static object lockObject = new object();
