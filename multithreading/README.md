@@ -44,7 +44,7 @@ using System;
 using System.Threading;
 using System.Collections.Generic;
 
-
+```csharp
 class Program
 {
     private static object lockObject = new object();
