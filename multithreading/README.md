@@ -85,6 +85,35 @@ class Program
     }
 }
 ```
+After running the program, the result will be:
+```
+Thread 3: Counter = 1
+Thread 5: Counter = 2
+Thread 4: Counter = 3
+Thread 2: Counter = 4
+Thread 1: Counter = 5
+Thread 1: Counter = 6
+Thread 2: Counter = 7
+Thread 5: Counter = 8
+Thread 4: Counter = 9
+Thread 3: Counter = 10
+Thread 3: Counter = 11
+Thread 5: Counter = 12
+Thread 2: Counter = 13
+Thread 4: Counter = 14
+Thread 1: Counter = 15
+Thread 2: Counter = 16
+Thread 4: Counter = 17
+Thread 1: Counter = 18
+Thread 5: Counter = 19
+Thread 3: Counter = 20
+Thread 5: Counter = 21
+Thread 1: Counter = 22
+Thread 4: Counter = 23
+Thread 3: Counter = 24
+Thread 2: Counter = 25
+Main Thread Finished
+```
 In this example:
 
 Multiple threads are created and started to perform the PerformTask method.
