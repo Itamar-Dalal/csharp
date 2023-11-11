@@ -246,7 +246,7 @@ IShape clonedCircle = originalCircle.Clone();
 originalCircle.Draw();
 clonedCircle.Draw();
 ```
-Note: I won't give any more code examples, those interested in seeing how this is implemented can search on the internet.
+Note: I won't give any more code examples. Those interested in seeing the implementation can search on the internet.
 ### Structural Design Patterns
 
 - **Adapter**: Allows the interface of an existing class to be used as another interface.
