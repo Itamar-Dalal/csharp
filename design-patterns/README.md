@@ -100,7 +100,121 @@ class Geeks : B
 }
 ```
 - **Builder**: Separates the construction of a complex object from its representation.
+  For example:
+```csharp
+public class Computer
+{
+    public string CPU { get; set; }
+    public int RAM { get; set; }
+    public string Storage { get; set; }
+}
+
+public class ComputerBuilder
+{
+    private Computer computer;
+
+    public ComputerBuilder()
+    {
+        computer = new Computer();
+    }
+
+    public ComputerBuilder SetCPU(string cpu)
+    {
+        computer.CPU = cpu;
+        return this;
+    }
+
+    public ComputerBuilder SetRAM(int ram)
+    {
+        computer.RAM = ram;
+        return this;
+    }
+
+    public ComputerBuilder SetStorage(string storage)
+    {
+        computer.Storage = storage;
+        return this;
+    }
+
+    public Computer Build()
+    {
+        return computer;
+    }
+}
+```
+Usage:
+```csharp
+var builder = new ComputerBuilder();
+// method chaining (it works because the functions return "this")
+var customComputer = builder
+    .SetCPU("Intel i7")
+    .SetRAM(16)
+    .SetStorage("512GB SSD")
+    .Build();
+```
 - **Factory Method**: Defines an interface for creating an object, but leaves the choice of its type to the subclasses.
+  For example:
+```csharp
+public abstract class Document
+{
+    public abstract void Open();
+    public abstract void Close();
+}
+
+public class PDFDocument : Document
+{
+    public override void Open()
+    {
+        Console.WriteLine("Opening PDF document");
+    }
+
+    public override void Close()
+    {
+        Console.WriteLine("Closing PDF document");
+    }
+}
+
+public class TextDocument : Document
+{
+    public override void Open()
+    {
+        Console.WriteLine("Opening Text document");
+    }
+
+    public override void Close()
+    {
+        Console.WriteLine("Closing Text document");
+    }
+}
+
+public interface DocumentFactory
+{
+    Document CreateDocument();
+}
+
+public class PDFDocumentFactory : DocumentFactory
+{
+    public Document CreateDocument()
+    {
+        return new PDFDocument();
+    }
+}
+
+public class TextDocumentFactory : DocumentFactory
+{
+    public Document CreateDocument()
+    {
+        return new TextDocument();
+    }
+}
+```
+Usage:
+```csharp
+DocumentFactory pdfFactory = new PDFDocumentFactory();
+Document pdfDoc = pdfFactory.CreateDocument();
+pdfDoc.Open();
+pdfDoc.Close();
+```
 - **Prototype**: Creates new objects by copying an existing object, known as a prototype.
 
 ### Structural Design Patterns
