@@ -9,9 +9,9 @@ Design patterns provide solutions to common software design problems. They are c
 ### Creational Design Patterns
 
 - **Singleton**: Singleton is a technique that's used in OOP programming in order to create a class that has only one instance.
+  For example:
 ```csharp
 using System;
-
 namespace ConsoleApp76
 {
     sealed class example // Sealed – meaning that no class can inherit from this class (not related to Singleton)
@@ -48,7 +48,57 @@ class Program
 }
 ```
 
-- **Abstract Factory**: Provides an interface for creating families of related or dependent objects.
+- **Abstract Factory (Interface)**: Interface in C# is a blueprint of a class. It's like an abstract class because all the methods that are declared inside the interface are abstract methods. It cannot have a method body and cannot be instantiated.
+It's used to achieve multiple inheritance which can't be achieved by class. It is used to achieve full abstraction because it cannot have a method body.
+The class or struct that implements the interface must provide the implementation of all the methods declared inside the interface.
+For example:
+```csharp
+// declaring an interface
+public interface A {
+     
+    // method of interface
+    void mymethod1();
+    void mymethod2();
+}
+ 
+// The methods of interface A
+// is inherited into interface B
+public interface B : A {
+     
+    // method of interface B
+    void mymethod3();
+}
+ 
+ 
+// Below class is inheriting
+// only interface B
+// This class must
+// implement both interfaces
+class Geeks : B
+{
+     
+    // implementing the method
+    // of interface A
+    public void mymethod1()
+    {
+        Console.WriteLine("Implement method 1");
+    }
+     
+    // Implement the method
+    // of interface A
+    public void mymethod2()
+    {
+        Console.WriteLine("Implement method 2");
+    }
+     
+    // Implement the method
+    // of interface B
+    public void mymethod3()
+    {
+        Console.WriteLine("Implement method 3");
+    }
+}
+```
 - **Builder**: Separates the construction of a complex object from its representation.
 - **Factory Method**: Defines an interface for creating an object, but leaves the choice of its type to the subclasses.
 - **Prototype**: Creates new objects by copying an existing object, known as a prototype.
