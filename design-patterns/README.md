@@ -216,7 +216,36 @@ pdfDoc.Open();
 pdfDoc.Close();
 ```
 - **Prototype**: Creates new objects by copying an existing object, known as a prototype.
+  For example:
+```csharp
+public interface IShape
+{
+    IShape Clone();
+    void Draw();
+}
 
+public class Circle : IShape
+{
+    public int Radius { get; set; }
+
+    public IShape Clone()
+    {
+        return new Circle { Radius = this.Radius };
+    }
+
+    public void Draw()
+    {
+        Console.WriteLine("Drawing a circle with radius " + Radius);
+    }
+}
+```
+Usage:
+```csharp
+IShape originalCircle = new Circle { Radius = 5 };
+IShape clonedCircle = originalCircle.Clone();
+originalCircle.Draw();
+clonedCircle.Draw();
+```
 ### Structural Design Patterns
 
 - **Adapter**: Allows the interface of an existing class to be used as another interface.
